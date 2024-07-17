@@ -96,11 +96,11 @@
             const color = document.getElementById("color").value;
             const additionalInfo = document.getElementById("additional-info").value;
 
-            let message = `Pemesanan Kaos FJ%0A%0ANama : ${encodeURIComponent(name)}%0AWarna : ${encodeURIComponent(color)}%0AKeterangan Tambahan : ${encodeURIComponent(additionalInfo)}%0A%0A`;
+            let message = `*_👕 Pemesanan Kaos FJ 👕_*%0A%0ANama : ${encodeURIComponent(name)}%0AWarna : ${encodeURIComponent(color)}%0AKeterangan Tambahan : ${encodeURIComponent(additionalInfo)}%0A%0A`;
 
             const sections = ["pendek", "panjang", "3/4", "7/8"];
             sections.forEach(section => {
-                message += `- ${section.charAt(0).toUpperCase() + section.slice(1)}%0A`;
+                message += `*◼ ${section.charAt(0).toUpperCase() + section.slice(1)}*%0A`;
                 ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"].forEach(size => {
                     const value = document.getElementById(`${section}-${size}`).value;
                     if (value !== "0" && value !== "") {

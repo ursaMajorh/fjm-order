@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan Kaos FJ</title>
+    <style>
+        /* Tempelkan CSS di sini */
+    </style>
+    <script>
+        function createWhatsAppLink(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById("name").value;
+            const color = document.getElementById("color").value;
+            const additionalInfo = document.getElementById("additional-info").value;
+
+            let message = `Pemesanan Kaos FJ%0A%0ANama : ${encodeURIComponent(name)}%0AWarna : ${encodeURIComponent(color)}%0AKeterangan Tambahan : ${encodeURIComponent(additionalInfo)}%0A%0A`;
+
+            const sections = ["pendek", "panjang", "threefour-3/4", "seveneight-7/8"];
+            sections.forEach(section => {
+                message += `- ${section.charAt(0).toUpperCase() + section.slice(1)}%0A`;
+                ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"].forEach(size => {
+                    const value = document.getElementById(`${section}-${size}`).value;
+                    if (value !== "0" && value !== "") {
+                        message += `${size} : ${value}%0A`;
+                    }
+                });
+                message += "%0A";
+            });
+
+            const link = `https://api.whatsapp.com/send?phone=6281381573098&text=${message}&type=phone_number&app_absent=0`;
+            window.open(link, '_blank');
+        }
+    </script>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+h3 {
+    color: #333;
+    border-bottom: 2px solid #f4f4f4;
+    padding-bottom: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f8f8;
+}
+
+input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Pemesanan Kaos FJ</h1>
+    <form onsubmit="createWhatsAppLink(event)">
+        <label for="name">Nama:</label><br>
+        <input type="text" id="name" name="name" value="Hilman" required><br><br>
+        
+        <label for="color">Warna:</label><br>
+        <input type="text" id="color" name="color" value="Hitam" required><br><br>
+        
+        <label for="additional-info">Keterangan Tambahan:</label><br>
+        <input type="text" id="additional-info" name="additional-info"><br><br>
+
+        <h3>Pendek</h3>
+        <table>
+            <tr>
+                <th>XS <br><input type="number" id="pendek-XS" name="pendek-XS" value="0"></th>
+                <th>S <br><input type="number" id="pendek-S" name="pendek-S" value="0"></th>
+                <th>M <br><input type="number" id="pendek-M" name="pendek-M" value="0"></th>
+                <th>L <br><input type="number" id="pendek-L" name="pendek-L" value="0"></th>
+            </tr>
+            <tr>
+                <th>XL <br><input type="number" id="pendek-XL" name="pendek-XL" value="0"></th>
+                <th>2XL <br><input type="number" id="pendek-2XL" name="pendek-2XL" value="0"></th>
+                <th>3XL <br><input type="number" id="pendek-3XL" name="pendek-3XL" value="0"></th>
+                <th>4XL <br><input type="number" id="pendek-4XL" name="pendek-4XL" value="0"></th>
+            </tr>
+        </table>
+        
+        <h3>Panjang</h3>
+        <table>
+            <tr>
+                <th>XS <br><input type="number" id="panjang-XS" name="panjang-XS" value="0"></th>
+                <th>S <br><input type="number" id="panjang-S" name="panjang-S" value="0"></th>
+                <th>M <br><input type="number" id="panjang-M" name="panjang-M" value="0"></th>
+                <th>L <br><input type="number" id="panjang-L" name="panjang-L" value="0"></th>
+            </tr>
+            <tr>
+                <th>XL <br><input type="number" id="panjang-XL" name="panjang-XL" value="0"></th>
+                <th>2XL <br><input type="number" id="panjang-2XL" name="panjang-2XL" value="0"></th>
+                <th>3XL <br><input type="number" id="panjang-3XL" name="panjang-3XL" value="0"></th>
+                <th>4XL <br><input type="number" id="panjang-4XL" name="panjang-4XL" value="0"></th>
+            </tr>
+        </table>
+        
+        <h3>3/4</h3>
+        <table>
+            <tr>
+                <th>XS <br><input type="number" id="threefour-3/4-XS" name="threefour-3/4-XS" value="0"></th>
+                <th>S <br><input type="number" id="threefour-3/4-S" name="threefour-3/4-S" value="0"></th>
+                <th>M <br><input type="number" id="threefour-3/4-M" name="threefour-3/4-M" value="0"></th>
+                <th>L <br><input type="number" id="threefour-3/4-L" name="threefour-3/4-L" value="0"></th>
+            </tr>
+            <tr>
+                <th>XL <br><input type="number" id="threefour-3/4-XL" name="threefour-3/4-XL" value="0"></th>
+                <th>2XL <br><input type="number" id="threefour-3/4-2XL" name="threefour-3/4-2XL" value="0"></th>
+                <th>3XL <br><input type="number" id="threefour-3/4-3XL" name="threefour-3/4-3XL" value="0"></th>
+                <th>4XL <br><input type="number" id="threefour-3/4-4XL" name="threefour-3/4-4XL" value="0"></th>
+            </tr>
+        </table>
+        
+        <h3>7/8</h3>
+        <table>
+            <tr>
+                <th>XS <br><input type="number" id="seveneight-7/8-XS" name="seveneight-7/8-XS" value="0"></th>
+                <th>S <br><input type="number" id="seveneight-7/8-S" name="seveneight-7/8-S" value="0"></th>
+                <th>M <br><input type="number" id="seveneight-7/8-M" name="seveneight-7/8-M" value="0"></th>
+                <th>L <br><input type="number" id="seveneight-7/8-L" name="seveneight-7/8-L" value="0"></th>
+            </tr>
+            <tr>
+                <th>XL <br><input type="number" id="seveneight-7/8-XL" name="seveneight-7/8-XL" value="0"></th>
+                <th>2XL <br><input type="number" id="seveneight-7/8-2XL" name="seveneight-7/8-2XL" value="0"></th>
+                <th>3XL <br><input type="number" id="seveneight-7/8-3XL" name="seveneight-7/8-3XL" value="0"></th>
+                <th>4XL <br><input type="number" id="seveneight-7/8-4XL" name="seveneight-7/8-4XL" value="0"></th>
+            </tr>
+        </table>
+        
+        
+        <input type="submit" value="Pesan">
+    </form>
+</body>
+</html>

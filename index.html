@@ -5,7 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pemesanan Kaos FJ</title>
     <style>
-        /* Tempelkan CSS di sini */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        form {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        h3 {
+            color: #333;
+            border-bottom: 2px solid #f4f4f4;
+            padding-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+
+        input[type="number"] {
+            width: 50px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
     </style>
     <script>
         function createWhatsAppLink(event) {
@@ -17,7 +98,7 @@
 
             let message = `Pemesanan Kaos FJ%0A%0ANama : ${encodeURIComponent(name)}%0AWarna : ${encodeURIComponent(color)}%0AKeterangan Tambahan : ${encodeURIComponent(additionalInfo)}%0A%0A`;
 
-            const sections = ["pendek", "panjang", "threefour-3/4", "seveneight-7/8"];
+            const sections = ["pendek", "panjang", "3/4", "7/8"];
             sections.forEach(section => {
                 message += `- ${section.charAt(0).toUpperCase() + section.slice(1)}%0A`;
                 ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"].forEach(size => {
@@ -33,91 +114,6 @@
             window.open(link, '_blank');
         }
     </script>
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-h1 {
-    text-align: center;
-    color: #333;
-    margin-top: 20px;
-}
-
-form {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
-}
-
-input[type="text"] {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-h3 {
-    color: #333;
-    border-bottom: 2px solid #f4f4f4;
-    padding-bottom: 5px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 15px;
-}
-
-th, td {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-
-th {
-    background-color: #f8f8f8;
-}
-
-input[type="number"] {
-    width: 50px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-}
-
-input[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-input[type="submit"]:hover {
-    background-color: #218838;
-}
-
-    </style>
 </head>
 <body>
     <h1>Pemesanan Kaos FJ</h1>
@@ -166,35 +162,34 @@ input[type="submit"]:hover {
         <h3>3/4</h3>
         <table>
             <tr>
-                <th>XS <br><input type="number" id="threefour-3/4-XS" name="threefour-3/4-XS" value="0"></th>
-                <th>S <br><input type="number" id="threefour-3/4-S" name="threefour-3/4-S" value="0"></th>
-                <th>M <br><input type="number" id="threefour-3/4-M" name="threefour-3/4-M" value="0"></th>
-                <th>L <br><input type="number" id="threefour-3/4-L" name="threefour-3/4-L" value="0"></th>
+                <th>XS <br><input type="number" id="3/4-XS" name="3/4-XS" value="0"></th>
+                <th>S <br><input type="number" id="3/4-S" name="3/4-S" value="0"></th>
+                <th>M <br><input type="number" id="3/4-M" name="3/4-M" value="0"></th>
+                <th>L <br><input type="number" id="3/4-L" name="3/4-L" value="0"></th>
             </tr>
             <tr>
-                <th>XL <br><input type="number" id="threefour-3/4-XL" name="threefour-3/4-XL" value="0"></th>
-                <th>2XL <br><input type="number" id="threefour-3/4-2XL" name="threefour-3/4-2XL" value="0"></th>
-                <th>3XL <br><input type="number" id="threefour-3/4-3XL" name="threefour-3/4-3XL" value="0"></th>
-                <th>4XL <br><input type="number" id="threefour-3/4-4XL" name="threefour-3/4-4XL" value="0"></th>
+                <th>XL <br><input type="number" id="3/4-XL" name="3/4-XL" value="0"></th>
+                <th>2XL <br><input type="number" id="3/4-2XL" name="3/4-2XL" value="0"></th>
+                <th>3XL <br><input type="number" id="3/4-3XL" name="3/4-3XL" value="0"></th>
+                <th>4XL <br><input type="number" id="3/4-4XL" name="3/4-4XL" value="0"></th>
             </tr>
         </table>
         
         <h3>7/8</h3>
         <table>
             <tr>
-                <th>XS <br><input type="number" id="seveneight-7/8-XS" name="seveneight-7/8-XS" value="0"></th>
-                <th>S <br><input type="number" id="seveneight-7/8-S" name="seveneight-7/8-S" value="0"></th>
-                <th>M <br><input type="number" id="seveneight-7/8-M" name="seveneight-7/8-M" value="0"></th>
-                <th>L <br><input type="number" id="seveneight-7/8-L" name="seveneight-7/8-L" value="0"></th>
+                <th>XS <br><input type="number" id="7/8-XS" name="7/8-XS" value="0"></th>
+                <th>S <br><input type="number" id="7/8-S" name="7/8-S" value="0"></th>
+                <th>M <br><input type="number" id="7/8-M" name="7/8-M" value="0"></th>
+                <th>L <br><input type="number" id="7/8-L" name="7/8-L" value="0"></th>
             </tr>
             <tr>
-                <th>XL <br><input type="number" id="seveneight-7/8-XL" name="seveneight-7/8-XL" value="0"></th>
-                <th>2XL <br><input type="number" id="seveneight-7/8-2XL" name="seveneight-7/8-2XL" value="0"></th>
-                <th>3XL <br><input type="number" id="seveneight-7/8-3XL" name="seveneight-7/8-3XL" value="0"></th>
-                <th>4XL <br><input type="number" id="seveneight-7/8-4XL" name="seveneight-7/8-4XL" value="0"></th>
+                <th>XL <br><input type="number" id="7/8-XL" name="7/8-XL" value="0"></th>
+                <th>2XL <br><input type="number" id="7/8-2XL" name="7/8-2XL" value="0"></th>
+                <th>3XL <br><input type="number" id="7/8-3XL" name="7/8-3XL" value="0"></th>
+                <th>4XL <br><input type="number" id="7/8-4XL" name="7/8-4XL" value="0"></th>
             </tr>
         </table>
-        
         
         <input type="submit" value="Pesan">
     </form>
